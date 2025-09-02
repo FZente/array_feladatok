@@ -35,31 +35,49 @@ console.log(rendezettlottoszamok)
 
 //3.feladat
 
-function getNumberOfHits(talalatok){
-    const hosszegyenlo = talal.length === talalatok.lenght
-    if (!hosszegyenlo) {return false;}
+function getNumberOfHits(lottoszamok, talal){
+    // const hosszegyenlo = talal.length === talalatok.lenght
+    // if (!hosszegyenlo) {return false;}
+    // let egyenlo = true;
+    // for (let i = 0; i < talal.length; i++){
+    //     if (talal[i] !== talalatok[i]){
+    //         return false;
+    //     }
+    // }
+    // return egyenlo
 
-    let egyenlo = true;
-    for (let i = 0; i < talal.length; i++){
-        if (talal[i] !== talalatok[i]){
-            return false;
+    let talalatok = 0;
+
+    for (let i = 0; i < talal.length; i++) {
+        if (lottoszamok.includes(talal[i])) {
+            talalatok++;
         }
     }
-    return egyenlo
+    return talalatok;
 }
 const talal = [1,20,30,67,84]
-const talalatok = getNumberOfHits(lottoszamok)
-console.log(talalatok)
+console.log("Tippek: ", talal)
+const talalatok = getNumberOfHits(lottoszamok, talal)
+console.log("Találatok száma: ", talalatok)
 
 //4.feladat
 
-function getMonthlyLotteryArrayNumbers(sokSzam){
-    const negy = []
-    let szamlalo = 4 
-    for (i = 0; i < szamlalo.lenght; i++){
-        negy.push(sokSzam)
+function getMonthlyLotteryArrayNumbers(){
+    // const negy = []
+    // let szamlalo = 4 
+    // for (i = 0; i < szamlalo.lenght; i++){
+    //     negy.push(sokSzam)
+    // }
+
+    const honapSzamai = [];
+    const hetekSzama = 4;  
+    for (let i = 0; i < hetekSzama; i++) {
+        honapSzamai.push(getOtosLotteryNumbers());
     }
+    return honapSzamai;
 }
 
-const negyhet = getMonthlyLotteryArrayNumbers(lottoszamok)
+const negyhet = getMonthlyLotteryArrayNumbers()
 console.log(negyhet)
+
+//5.feladat

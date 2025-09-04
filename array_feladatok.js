@@ -80,19 +80,20 @@ console.log(negyhet);
 
 //5.feladat
 
-function getMonthlyLotteryArrayUniqueNumbers() {
+function getMonthlyLotteryArrayUniqueNumbers(haviszamok) {
   //let ossz = tomb1.concat(negyhet);
   //let tomb1 = [...new Set(negyhet)];
-
-  return tomb1;
+  const osszesSzam = haviszamok.flat();
+  return [...new Set(osszesSzam)];
 }
 
-const negyhetkihuzott = getMonthlyLotteryArrayUniqueNumbers();
+const negyhetkihuzott = getMonthlyLotteryArrayUniqueNumbers(negyhet);
 console.log(negyhetkihuzott);
 
 //6.feladat
 
-function monthlyStatistics() {}
+function monthlyStatistics() {
+}
 
 const stat = monthlyStatistics();
 console.log(stat);
